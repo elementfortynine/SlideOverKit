@@ -6,7 +6,7 @@ namespace SlideOverKit.Droid
 {
     public interface ISlideOverKitPageRendererDroid
     {
-        Action<ElementChangedEventArgs<Page>> OnElementChangedEvent { get; set; }
+        Action<ElementChangedEventArgs<TabbedPage>> OnElementChangedEvent { get; set; }
 
         Action<bool, int,int,int,int> OnLayoutEvent { get; set; }
 

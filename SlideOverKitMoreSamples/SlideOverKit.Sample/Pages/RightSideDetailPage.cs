@@ -1,33 +1,24 @@
 ﻿using System;
-
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace SlideOverKit.MoreSample
 {
+    class TabModel
+    {
+        public string Title { get; set; }
+    }
+
     public class RightSideDetailPage : MenuContainerPage
     {
+        public static RightSideDetailPage Instance;
+
         public RightSideDetailPage ()
         {
-            Content = new StackLayout { 
-                VerticalOptions = LayoutOptions.Center,
-                Spacing = 10,
-                Children = {
-                    new Button{
-                        Text ="Show Menu",
-                        Command = new Command(()=>{
-                            this.ShowMenu();
-                        })
-                    },
-                    new Button{
-                        Text ="Hide Menu",
-                        Command = new Command(()=>{
-                            this.HideMenu();
-                        })
-                    },
-                }
-            };
-
+            ItemsSource = new List<TabModel> () { new TabModel () { Title = "boo"},new TabModel () { Title = "coo" } };
+            this.ItemTemplate = new DataTemplate (typeof (TabPage));
             this.SlideMenu = new RightSideMasterPage ();
+            Instance = this;
         }
     }
 }

@@ -19,17 +19,17 @@ namespace SlideOverKit.MoreSample
             this.PopupViews.Add ("SecondPopup", new PopOverWithTriangleView ());
 
 
-            Content = new ScrollView {
-                Orientation= ScrollOrientation.Both,
-                Content = new StackLayout {
-                    Spacing = 10,
-                    Children = {
-                        new BoxView {BackgroundColor = Color.Transparent, HeightRequest = 300, WidthRequest=300},
-                        button,
-                        new BoxView {BackgroundColor = Color.Transparent, HeightRequest = 500, WidthRequest=500},
-                        }
-                }
-            };
+            //Content = new ScrollView {
+            //    Orientation= ScrollOrientation.Both,
+            //    Content = new StackLayout {
+            //        Spacing = 10,
+            //        Children = {
+            //            new BoxView {BackgroundColor = Color.Transparent, HeightRequest = 300, WidthRequest=300},
+            //            button,
+            //            new BoxView {BackgroundColor = Color.Transparent, HeightRequest = 500, WidthRequest=500},
+            //            }
+            //    }
+            //};
 
             this.ToolbarItems.Add (new ToolbarItem {
                 Command = new Command (() => {

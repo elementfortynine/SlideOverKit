@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SlideOverKit
 {
-    public class MenuContainerPage : ContentPage, IMenuContainerPage, IPopupContainerPage
+    public class MenuContainerPage : TabbedPage, IMenuContainerPage, IPopupContainerPage
     {
         public MenuContainerPage ()
         {

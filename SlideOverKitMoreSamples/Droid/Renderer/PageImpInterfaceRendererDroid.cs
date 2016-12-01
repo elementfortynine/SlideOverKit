@@ -10,9 +10,9 @@ namespace SlideOverKit.MoreSample.Droid
 {
     // As your page cannot inherit from MenuContainerPage,
     // You must create a renderer page, copy these codes and rename.
-    public class PageImpInterfaceRendererDroid : PageRenderer, ISlideOverKitPageRendererDroid
+    public class PageImpInterfaceRendererDroid : TabbedRenderer, ISlideOverKitPageRendererDroid
     {
-        public Action<ElementChangedEventArgs<Page>> OnElementChangedEvent { get; set; }
+        public Action<ElementChangedEventArgs<TabbedPage>> OnElementChangedEvent { get; set; }
 
         public Action<bool, int,int,int,int> OnLayoutEvent { get; set; }
 
@@ -23,12 +23,19 @@ namespace SlideOverKit.MoreSample.Droid
             new SlideOverKitDroidHandler ().Init (this);
         }
 
-        protected override void OnElementChanged (ElementChangedEventArgs<Page> e)
+        protected override void OnElementChanged (ElementChangedEventArgs<TabbedPage> e)
         {
             base.OnElementChanged (e);
             if (OnElementChangedEvent != null)
                 OnElementChangedEvent (e);
         }
+
+        //protected override void OnElementChanged (ElementChangedEventArgs<TabbedPage> e)
+        //{
+        //    base.OnElementChanged (e);
+        //    if (OnElementChangedEvent != null)
+        //        OnElementChangedEvent (e);
+        //}
 
         protected override void OnLayout (bool changed, int l, int t, int r, int b)
         {

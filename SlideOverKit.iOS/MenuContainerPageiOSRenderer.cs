@@ -9,7 +9,7 @@ using CoreGraphics;
 [assembly: ExportRenderer (typeof(MenuContainerPage), typeof(MenuContainerPageiOSRenderer))]
 namespace SlideOverKit.iOS
 {
-    public class MenuContainerPageiOSRenderer : PageRenderer, ISlideOverKitPageRendereriOS
+    public class MenuContainerPageiOSRenderer : TabbedRenderer, ISlideOverKitPageRendereriOS
     {
         public Action<bool> ViewDidAppearEvent { get; set; }
 

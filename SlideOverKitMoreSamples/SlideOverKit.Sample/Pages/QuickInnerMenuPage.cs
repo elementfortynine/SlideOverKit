@@ -8,17 +8,17 @@ namespace SlideOverKit.MoreSample
     {
         public QuickInnerMenuPage ()
         {
-            Content = new StackLayout { 
-                VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Center,
-                Children = {
-                    new Button { Text = "Quick menu from right", Command = ShownMenuFromRight },
-                    new Button { Text = "Quick menu from left", Command = ShownMenuFromLeft },  
-                    new Button { Text = "Quick menu from top", Command = ShownMenuFromTop },
-                    new Button { Text = "Quick menu from bottom", Command = ShownMenuFromBottom },  
-                    new Button { Text = "Go Back to Main page", Command = GoBackToMainPage }
-                }
-            };
+            //Content = new StackLayout { 
+            //    VerticalOptions = LayoutOptions.Center,
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    Children = {
+            //        new Button { Text = "Quick menu from right", Command = ShownMenuFromRight },
+            //        new Button { Text = "Quick menu from left", Command = ShownMenuFromLeft },  
+            //        new Button { Text = "Quick menu from top", Command = ShownMenuFromTop },
+            //        new Button { Text = "Quick menu from bottom", Command = ShownMenuFromBottom },  
+            //        new Button { Text = "Go Back to Main page", Command = GoBackToMainPage }
+            //    }
+            //};
 
             this.SlideMenu = new QuickInnerMenuView (MenuOrientation.RightToLeft);
         }

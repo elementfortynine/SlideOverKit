@@ -8,9 +8,9 @@ using Android.Views;
 [assembly: ExportRenderer (typeof(MenuContainerPage), typeof(MenuContainerPageDroidRenderer))]
 namespace SlideOverKit.Droid
 {
-    public class MenuContainerPageDroidRenderer  : PageRenderer, ISlideOverKitPageRendererDroid
+    public class MenuContainerPageDroidRenderer  : TabbedRenderer, ISlideOverKitPageRendererDroid
     {
-        public Action<ElementChangedEventArgs<Page>> OnElementChangedEvent { get; set; }
+        public Action<ElementChangedEventArgs<TabbedPage>> OnElementChangedEvent { get; set; }
 
         public Action<bool, int,int,int,int> OnLayoutEvent { get; set; }
 
@@ -21,7 +21,7 @@ namespace SlideOverKit.Droid
             new SlideOverKitDroidHandler ().Init (this);
         }
 
-        protected override void OnElementChanged (ElementChangedEventArgs<Page> e)
+        protected override void OnElementChanged (ElementChangedEventArgs<TabbedPage> e)
         {
             base.OnElementChanged (e);
             if (OnElementChangedEvent != null)

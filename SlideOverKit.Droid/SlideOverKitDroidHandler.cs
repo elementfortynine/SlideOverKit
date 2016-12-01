@@ -12,7 +12,7 @@ namespace SlideOverKit.Droid
 {
     public class SlideOverKitDroidHandler
     {
-        PageRenderer _pageRenderer;
+        TabbedRenderer _pageRenderer;
         ISlideOverKitPageRendererDroid _menuKit;
         IMenuContainerPage _basePage;
         IDragGesture _dragGesture;
@@ -31,14 +31,14 @@ namespace SlideOverKit.Droid
         public void Init (ISlideOverKitPageRendererDroid menuKit)
         {
             _menuKit = menuKit;
-            _pageRenderer = menuKit as PageRenderer;
+            _pageRenderer = (TabbedRenderer)menuKit;
 
             _menuKit.OnElementChangedEvent = OnElementChanged;
             _menuKit.OnLayoutEvent = OnLayout;
             _menuKit.OnSizeChangedEvent = OnSizeChanged;
         }
 
-        void OnElementChanged (ElementChangedEventArgs<Page> e)
+        void OnElementChanged (ElementChangedEventArgs<TabbedPage> e)
         {
             _basePage = e.NewElement as IMenuContainerPage;
             _popupBasePage = e.NewElement as IPopupContainerPage;
